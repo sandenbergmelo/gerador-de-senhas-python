@@ -2,7 +2,7 @@ from random import shuffle, choice
 from string import ascii_letters, digits
 import PySimpleGUI as sg
 
-punctuation  = '@#.,*%+=-'
+punctuation  = '@#.,*%+=-!?&'
 
 # Funções
 def gerar_senha(letras=8, numeros=4, caracteres_especiais=2):
@@ -58,6 +58,6 @@ while True:
 	if evento == 'gerar':
 		senha = gerar_senha(valores['letras'], valores['numeros'], valores['chars'])
 		print(senha)
-		if valores['salvar'] == True:
+		if valores['salvar']:
 			salvar_senha(senha)
 			sg.popup('Senha salva em senhas.txt', title='Salvar senha')

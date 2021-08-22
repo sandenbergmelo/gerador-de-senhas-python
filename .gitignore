@@ -4,3 +4,4 @@ venv/
 senhas.txt
 temas.png
 testes.py
+*.ico

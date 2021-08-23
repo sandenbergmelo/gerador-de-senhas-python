@@ -1,6 +1,5 @@
 from random import shuffle, choice
 from string import ascii_letters, digits
-from os.path import abspath
 
 punctuation  = '@#.,*%+=-!?&'
 
@@ -31,9 +30,9 @@ def embaralhar_caracteres(chars):
 	return ''.join(chars)
 
 def salvar_senha(senha):
-	with open(f'{abspath("Documentos/senhas.txt")}', 'a') as senhas:
+	with open('senhas.txt', 'a') as senhas:
 		senhas.write(f'{senha}\n')
-	return 'Senha salva em ~/Documentos/senhas.txt'
+	return 'Senha salva em senhas.txt'
 
 if __name__ == '__main__':
 	from argparse import ArgumentParser

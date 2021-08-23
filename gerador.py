@@ -1,28 +1,8 @@
-from random import shuffle, choice
-from string import ascii_letters, digits
 import PySimpleGUI as sg
-
+from gerador_cli import gerar_senha
 punctuation  = '@#.,*%+=-!?&'
 
 # Funções
-def gerar_senha(letras=8, numeros=4, caracteres_especiais=2):
-	generated = ''
-	generated += gerar_caracteres(letras, ascii_letters)
-	generated += gerar_caracteres(numeros, digits)
-	generated += gerar_caracteres(caracteres_especiais, punctuation)
-	return embaralhar_caracteres(generated)
-
-def gerar_caracteres(length, chars):
-	generated = ''
-	for _ in range(length):
-		generated += choice(chars)
-	return generated
-
-def embaralhar_caracteres(chars):
-	chars = list(chars)
-	shuffle(chars)
-	return ''.join(chars)
-
 def salvar_senha(senha):
 	with open('senhas.txt', 'a') as senhas:
 		senhas.write(f'{senha}\n')

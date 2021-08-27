@@ -11,12 +11,7 @@ def gerar_senha(letras=8, numeros=4, caracteres_especiais=2, salvar=False):
 	generated += gerar_caracteres(caracteres_especiais, punctuation)
 	
 	senha = embaralhar_caracteres(generated)
-
-	if salvar:
-		salvar = salvar_senha(senha)
-		return senha, salvar
-	else:
-		return senha
+	return senha
 
 def gerar_caracteres(length, chars):
 	generated = ''
@@ -42,18 +37,16 @@ if __name__ == '__main__':
 	parser.add_argument('--letras', '-l',type=int, default=8, help='Quantidade de letras')
 	parser.add_argument('--numeros', '-n',type=int, default=4, help='Quantidade de números')
 	parser.add_argument('--chars', '-c',type=int, default=2, help='Quantidade de caracteres especiais')
-	parser.add_argument('--save', '-s', type=bool, nargs='?', default=False, help='Salvar senha em arquivo txt')
+	parser.add_argument('--salvar', '-s', type=bool, nargs='?', default=False, help='Salvar senha em arquivo txt')
 	
 	args = parser.parse_args()
 
-	if args.save == None or args.save:
-		args.save = True
-	else:
-		args.save = False
+	if args.salvar == None or args.salvar:
+		args.salvar = True
 	
-	senha = gerar_senha(args.letras, args.numeros, args.chars, args.save)
+	senha = gerar_senha(args.letras, args.numeros, args.chars, args.salvar)
 	
-	if isinstance(senha, Tuple):
-		print(f'{senha[0]}\n{senha[1]}')
-	else:
-		print(senha)
+	print(senha)
+
+	if args.salvar:
+		print(salvar_senha(senha))

@@ -31,7 +31,6 @@ def salvar_senha(senha):
 
 if __name__ == '__main__':
 	from argparse import ArgumentParser
-	from typing import Tuple
 	
 	parser = ArgumentParser()
 	parser.add_argument('--letras', '-l',type=int, default=8, help='Quantidade de letras')
@@ -41,7 +40,7 @@ if __name__ == '__main__':
 	
 	args = parser.parse_args()
 
-	if args.salvar == None or args.salvar:
+	if args.salvar != False:
 		args.salvar = True
 	
 	senha = gerar_senha(args.letras, args.numeros, args.chars, args.salvar)

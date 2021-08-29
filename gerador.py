@@ -33,11 +33,19 @@ while True:
 	evento, valores = janela.read()
 	if evento == sg.WIN_CLOSED or evento == 'sair':
 		break
+
 	if evento == 'limpar':
 		limpar_saida('resultado')
+	
 	if evento == 'gerar':
-		senha = gerar_senha(valores['letras'], valores['numeros'], valores['chars'])
-		print(senha)
-		if valores['salvar']:
-			salvar_senha(senha)
-			sg.popup('Senha salva em senhas.txt', title='Salvar senha')
+		letras, numeros, chars = valores['letras'], valores['numeros'], valores['chars']
+
+		if letras != 0 or numeros != 0 or chars != 0:
+			senha = gerar_senha(letras, numeros, chars)
+			print(senha)
+
+			if valores['salvar']:
+				salvar_senha(senha)
+				sg.popup('Senha salva em senhas.txt', title='Salvar senha')
+		else:
+			sg.popup('Impossível gerar senha vazia!', title='Erro!')

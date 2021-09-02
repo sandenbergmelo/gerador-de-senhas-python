@@ -31,6 +31,7 @@ janela = sg.Window('Gerador de senhas', layout=layout)
 # Eventos
 while True:
 	evento, valores = janela.read()
+
 	if evento == sg.WIN_CLOSED or evento == 'sair':
 		break
 

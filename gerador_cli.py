@@ -4,7 +4,7 @@ from string import ascii_letters, digits
 punctuation  = '@#.,*%+=-!?&'
 
 # Funções
-def gerar_senha(letras=8, numeros=4, caracteres_especiais=2, salvar=False):
+def gerar_senha(letras=8, numeros=4, caracteres_especiais=2):
 	generated = ''
 	generated += gerar_caracteres(letras, ascii_letters)
 	generated += gerar_caracteres(numeros, digits)
@@ -43,7 +43,7 @@ if __name__ == '__main__':
 	if args.salvar != False:
 		args.salvar = True
 	
-	senha = gerar_senha(args.letras, args.numeros, args.chars, args.salvar)
+	senha = gerar_senha(args.letras, args.numeros, args.chars)
 	
 	print(senha)
 

@@ -1,12 +1,8 @@
 import PySimpleGUI as sg
-from gerador_cli import gerar_senha
+from gerador_cli import gerar_senha, salvar_senha
 punctuation  = '@#.,*%+=-!?&'
 
 # Funções
-def salvar_senha(senha):
-	with open('senhas.txt', 'a') as senhas:
-		senhas.write(f'{senha}\n')
-
 def limpar_saida(obj):
 	janela.FindElement(obj).Update('')
 
@@ -46,7 +42,6 @@ while True:
 			print(senha)
 
 			if valores['salvar']:
-				salvar_senha(senha)
-				sg.popup('Senha salva em senhas.txt', title='Salvar senha')
+				sg.popup(salvar_senha(senha), title='Salvar senha')
 		else:
 			sg.popup('Impossível gerar senha vazia!', title='Erro!')

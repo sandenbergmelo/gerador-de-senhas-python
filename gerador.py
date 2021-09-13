@@ -15,9 +15,9 @@ layout = [
 	[sg.Text('Quantidade de caracteres especiais: '),
 	sg.Combo(values=list(range(17)), default_value=2, key='chars')],
 	[sg.Checkbox('Salvar senha', key='salvar')],
-	[sg.Button('Gerar Senha', key='gerar'),
-	sg.Button('Limpar', key='limpar'),
-	sg.Button('Sair', key='sair')],
+	[sg.Button('Gerar Senha', key='gerar', button_color='#008020'),
+	sg.Button('Limpar', key='limpar', button_color='#07f'),
+	sg.Button('Sair', key='sair', button_color='gray')],
 	[sg.Output(key='resultado', size=(36, 10), font='Consolas')]
 ]
 

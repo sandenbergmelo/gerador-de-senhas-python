@@ -1,14 +1,14 @@
 from random import shuffle, choice
 from string import ascii_letters, digits
 
-punctuation  = '@#.,*%+=-!?&'
+symbols  = '@#.,*%+=-!?&'
 
 # Funções
 def gerar_senha(letras=8, numeros=4, caracteres_especiais=2):
 	generated = ''
 	generated += gerar_caracteres(letras, ascii_letters)
 	generated += gerar_caracteres(numeros, digits)
-	generated += gerar_caracteres(caracteres_especiais, punctuation)
+	generated += gerar_caracteres(caracteres_especiais, symbols)
 	
 	senha = embaralhar_caracteres(generated)
 	return senha

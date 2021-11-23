@@ -1,6 +1,5 @@
 import PySimpleGUI as sg
 from gerador_cli import gerar_senha, salvar_senha
-punctuation  = '@#.,*%+=-!?&'
 
 # Funções
 def limpar_saida(obj):

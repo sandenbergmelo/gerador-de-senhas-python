@@ -6,3 +6,5 @@ temas.png
 testes.py
 *.ico
 venv/
+build/
+*.spec

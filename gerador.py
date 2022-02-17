@@ -37,6 +37,7 @@ app = QtWidgets.QApplication([])
 form = uic.loadUi("ui/form.ui")
 form.pushGerarSenha.clicked.connect(main)
 form.pushLimpar.clicked.connect(limpar_saida)
+form.pushSair.clicked.connect(app.quit)
 
 form.show()
 app.exec()

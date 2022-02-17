@@ -18,9 +18,6 @@ def main():
     else:
         pop_up("Erro", QMessageBox.Warning, "Impossível gerar senha vazia!")
 
-def limpar_saida():
-    form.listSaida.clear()
-
 def salvar(senha):
     salvar_senha(senha)
     pop_up("Senha Salva", QMessageBox.Information, "Senha salva em senhas.txt")
@@ -35,7 +32,7 @@ def pop_up(titulo, icone, texto):
 app = QtWidgets.QApplication([])
 form = uic.loadUi("ui/form.ui")
 form.pushGerarSenha.clicked.connect(main)
-form.pushLimpar.clicked.connect(limpar_saida)
+form.pushLimpar.clicked.connect(form.listSaida.clear)
 form.pushSair.clicked.connect(app.quit)
 
 form.show()

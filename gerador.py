@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets, uic
+from PyQt5.QtWidgets import QMessageBox
 from gerador_cli import gerar_senha, salvar_senha
 
 def main():
@@ -15,22 +16,20 @@ def main():
         if form.checkSalvarSenha.isChecked():
             salvar(senha)
     else:
-        msg = QtWidgets.QMessageBox()
-        msg.setWindowTitle("Erro")
-        msg.setIcon(QtWidgets.QMessageBox.Warning)
-        msg.setText("Impossível gerar senha vazia!")
-        msg.exec()
+        pop_up("Erro", QMessageBox.Warning, "Impossível gerar senha vazia!")
 
 def limpar_saida():
     form.listSaida.clear()
 
 def salvar(senha):
     salvar_senha(senha)
+    pop_up("Senha Salva", QMessageBox.Information, "Senha salva com sucesso!")
 
-    msg = QtWidgets.QMessageBox()
-    msg.setWindowTitle("Senha salva!")
-    msg.setIcon(QtWidgets.QMessageBox.Information)
-    msg.setText("Senha salva com sucesso em senhas.txt")
+def pop_up(titulo, icone, texto):
+    msg = QMessageBox()
+    msg.setWindowTitle(titulo)
+    msg.setIcon(icone)
+    msg.setText(texto)
     msg.exec()
 
 app = QtWidgets.QApplication([])

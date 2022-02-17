@@ -1,46 +1,43 @@
-import PySimpleGUI as sg
+from PyQt5 import QtWidgets, uic
 from gerador_cli import gerar_senha, salvar_senha
 
-# Funções
-def limpar_saida(obj):
-    janela.FindElement(obj).Update('')
+def main():
+    letras = int(form.spinLetras.value())
+    numeros = int(form.spinNumeros.value())
+    caracteres = int(form.spinCaracteres.value())
 
-# Layout
-layout = [
-    [sg.Text('Quantidade de letras: '),
-    sg.Combo(values=list(range(17)), default_value=8, key='letras')],
-    [sg.Text('Quantidade de números: '),
-    sg.Combo(values=list(range(17)), default_value=4, key='numeros')],
-    [sg.Text('Quantidade de caracteres especiais: '),
-    sg.Combo(values=list(range(17)), default_value=2, key='chars')],
-    [sg.Checkbox('Salvar senha', key='salvar')],
-    [sg.Button('Gerar Senha', key='gerar', button_color='#008020'),
-    sg.Button('Limpar', key='limpar', button_color='#07f'),
-    sg.Button('Sair', key='sair', button_color='gray')],
-    [sg.Output(key='resultado', size=(36, 10), font='Consolas')]
-]
+    if letras != 0 or numeros != 0 or caracteres != 0:
+        senha = gerar_senha(letras, numeros, caracteres)
 
-# Janela
-janela = sg.Window('Gerador de senhas', layout=layout)
+        saida = form.listSaida
+        saida.addItem(senha)
 
-# Eventos
-while True:
-    evento, valores = janela.read()
+        if form.checkSalvarSenha.isChecked():
+            salvar(senha)
+    else:
+        msg = QtWidgets.QMessageBox()
+        msg.setWindowTitle("Erro")
+        msg.setIcon(QtWidgets.QMessageBox.Warning)
+        msg.setText("Impossível gerar senha vazia!")
+        msg.exec()
 
-    if evento == sg.WIN_CLOSED or evento == 'sair':
-        break
+def limpar_saida():
+    form.listSaida.clear()
 
-    if evento == 'limpar':
-        limpar_saida('resultado')
+def salvar(senha):
+    salvar_senha(senha)
 
-    if evento == 'gerar':
-        letras, numeros, chars = valores['letras'], valores['numeros'], valores['chars']
+    msg = QtWidgets.QMessageBox()
+    msg.setWindowTitle("Senha salva!")
+    msg.setIcon(QtWidgets.QMessageBox.Information)
+    msg.setText("Senha salva com sucesso em senhas.txt")
+    msg.exec()
 
-        if letras != 0 or numeros != 0 or chars != 0:
-            senha = gerar_senha(letras, numeros, chars)
-            print(senha)
+app = QtWidgets.QApplication([])
+form = uic.loadUi("ui/form.ui")
+form.pushGerarSenha.clicked.connect(main)
+form.pushLimpar.clicked.connect(limpar_saida)
+form.pushSair.clicked.connect(app.quit)
 
-            if valores['salvar']:
-                sg.popup(salvar_senha(senha), title='Salvar senha')
-        else:
-            sg.popup('Impossível gerar senha vazia!', title='Erro!')
+form.show()
+app.exec()

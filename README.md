@@ -1,2 +1,2 @@
 # Gerador-de-senhas-python
-Um gerador de senhas fortes feito em python utilizando Qt5
+Um gerador de senhas fortes feito em Python utilizando Qt5

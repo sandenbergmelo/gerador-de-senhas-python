@@ -23,7 +23,7 @@ def limpar_saida():
 
 def salvar(senha):
     salvar_senha(senha)
-    pop_up("Senha Salva", QMessageBox.Information, "Senha salva com sucesso!")
+    pop_up("Senha Salva", QMessageBox.Information, "Senha salva em senhas.txt")
 
 def pop_up(titulo, icone, texto):
     msg = QMessageBox()

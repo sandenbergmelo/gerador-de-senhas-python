@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>457</width>
-    <height>491</height>
+    <width>465</width>
+    <height>490</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>40</x>
       <y>20</y>
       <width>169</width>
       <height>22</height>
@@ -38,7 +38,7 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>40</x>
       <y>60</y>
       <width>198</width>
       <height>22</height>
@@ -56,7 +56,7 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>40</x>
       <y>100</y>
       <width>293</width>
       <height>22</height>
@@ -92,13 +92,13 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Salvar Senha</string>
+     <string>Salvar senha</string>
     </property>
    </widget>
    <widget class="QSpinBox" name="spinLetras">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>220</x>
       <y>20</y>
       <width>46</width>
       <height>28</height>
@@ -122,7 +122,7 @@
    <widget class="QSpinBox" name="spinNumeros">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>250</x>
       <y>60</y>
       <width>46</width>
       <height>28</height>
@@ -146,7 +146,7 @@
    <widget class="QSpinBox" name="spinCaracteres">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>340</x>
       <y>100</y>
       <width>46</width>
       <height>28</height>
@@ -294,8 +294,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>457</width>
-     <height>21</height>
+     <width>465</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>

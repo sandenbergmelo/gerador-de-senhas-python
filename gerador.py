@@ -11,6 +11,7 @@ def main():
 
         saida = form.listSaida
         saida.addItem(senha)
+        saida.scrollToBottom()
 
         if form.checkSalvarSenha.isChecked():
             salvar_senha(senha)

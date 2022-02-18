@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets, uic
 from gerador_cli import gerar_senha, salvar_senha
+from ui.pop_up import pop_up
 
 def main():
     letras = int(form.spinLetras.value())
@@ -26,13 +27,6 @@ def main():
             QtWidgets.QMessageBox.Warning,
             'Impossível gerar senha vazia!'
         )
-
-def pop_up(titulo, icone, texto):
-    msg = QtWidgets.QMessageBox()
-    msg.setWindowTitle(titulo)
-    msg.setIcon(icone)
-    msg.setText(texto)
-    msg.exec()
 
 app = QtWidgets.QApplication([])
 form = uic.loadUi("ui/form.ui")

@@ -1,6 +1,27 @@
 from PyQt5 import QtWidgets, uic
-from gerador_cli import gerar_senha, salvar_senha
+from gerador_cli import gerar_senha
 from ui.pop_up import pop_up
+
+def salvar_senha(senha):
+
+    options = QtWidgets.QFileDialog.Options()
+    options |= QtWidgets.QFileDialog.DontUseNativeDialog
+    options |= QtWidgets.QFileDialog.DontConfirmOverwrite
+
+    arquivo = QtWidgets.QFileDialog.getSaveFileName(
+        None,
+        caption='Salvar senha',
+        directory='senhas.txt',
+        filter='Arquivo de texto (*.txt);;Todos os arquivos (*)',
+        options=options
+    )[0]
+
+    if arquivo != '':
+        with open(arquivo, 'a') as senhas:
+            senhas.write(f'{senha}\n')
+        return True
+    else:
+        return False
 
 def main():
     letras = int(form.spinLetras.value())
@@ -15,12 +36,19 @@ def main():
         saida.scrollToBottom()
 
         if form.checkSalvarSenha.isChecked():
-            salvar_senha(senha)
-            pop_up(
-                'Senha Salva!',
-                QtWidgets.QMessageBox.Information,
-                'Senha salva em senhas.txt'
-            )
+            salvo = salvar_senha(senha)
+            if salvo:
+                pop_up(
+                    'Senha Salva!',
+                    QtWidgets.QMessageBox.Information,
+                    'Senha salva com sucesso!'
+                )
+            else:
+                pop_up(
+                    'Erro ao salvar senha!',
+                    QtWidgets.QMessageBox.Critical,
+                    'Erro ao salvar senha!'
+                )
     else:
         pop_up(
             'Erro',

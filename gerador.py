@@ -24,18 +24,19 @@ def salvar_senha(senha):
         return False
 
 def main():
-    letras = int(form.spinLetras.value())
-    numeros = int(form.spinNumeros.value())
-    caracteres = int(form.spinCaracteres.value())
+    
+    letras = int(tela.spinLetras.value())
+    numeros = int(tela.spinNumeros.value())
+    caracteres = int(tela.spinCaracteres.value())
 
     if letras != 0 or numeros != 0 or caracteres != 0:
         senha = gerar_senha(letras, numeros, caracteres)
 
-        saida = form.listSaida
+        saida = tela.listSaida
         saida.addItem(senha)
         saida.scrollToBottom()
 
-        if form.checkSalvarSenha.isChecked():
+        if tela.checkSalvarSenha.isChecked():
             salvo = salvar_senha(senha)
             if salvo:
                 pop_up(
@@ -57,10 +58,10 @@ def main():
         )
 
 app = QtWidgets.QApplication([])
-form = uic.loadUi("ui/form.ui")
-form.pushGerarSenha.clicked.connect(main)
-form.pushLimpar.clicked.connect(form.listSaida.clear)
-form.pushSair.clicked.connect(app.quit)
+tela = uic.loadUi("ui/tela.ui")
+tela.pushGerarSenha.clicked.connect(main)
+tela.pushLimpar.clicked.connect(tela.listSaida.clear)
+tela.pushSair.clicked.connect(app.quit)
 
-form.show()
+tela.show()
 app.exec()

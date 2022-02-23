@@ -14,7 +14,7 @@
    <string>Gerador de senhas</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(195, 255, 181);</string>
+   <string notr="true">background-color: rgb(40, 42, 54);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -30,6 +30,9 @@
      <font>
       <pointsize>13</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(248, 248, 242);</string>
     </property>
     <property name="text">
      <string>Quantidate de letras:</string>
@@ -49,6 +52,9 @@
       <pointsize>13</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(248, 248, 242);</string>
+    </property>
     <property name="text">
      <string>Quantidade de números:</string>
     </property>
@@ -66,6 +72,9 @@
      <font>
       <pointsize>13</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(248, 248, 242);</string>
     </property>
     <property name="text">
      <string>Quantidade de caracteres especiais:</string>
@@ -89,7 +98,7 @@
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">color: rgb(248, 248, 242);</string>
     </property>
     <property name="text">
      <string>Salvar senha</string>
@@ -182,7 +191,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(117, 154, 255);</string>
+     <string notr="true">background-color: rgb(139, 233, 253);</string>
     </property>
     <property name="text">
      <string>Gerar Senha</string>
@@ -210,7 +219,8 @@
      <enum>Qt::DefaultContextMenu</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">color: rgb(248, 248, 242);
+background-color: rgb(68, 71, 90);</string>
     </property>
     <property name="autoScrollMargin">
      <number>16</number>
@@ -261,7 +271,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(139, 139, 139);</string>
+     <string notr="true">background-color: rgb(98, 114, 164);</string>
     </property>
     <property name="text">
      <string>Limpar</string>
@@ -282,7 +292,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(181, 92, 92);</string>
+     <string notr="true">background-color: rgb(255, 85, 85);</string>
     </property>
     <property name="text">
      <string>Sair</string>

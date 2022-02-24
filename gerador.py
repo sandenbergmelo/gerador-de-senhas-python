@@ -16,12 +16,12 @@ def salvar_senha(senha):
         options=options
     )[0]
 
-    if arquivo != '':
-        with open(arquivo, 'a') as senhas:
-            senhas.write(f'{senha}\n')
-        return True
-    else:
+    if arquivo == '':
         return False
+    
+    with open(arquivo, 'a') as senhas:
+            senhas.write(f'{senha}\n')
+    return True
 
 def main():
     

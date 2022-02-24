@@ -191,7 +191,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(139, 233, 253);</string>
+     <string notr="true">background-color: rgb(80, 250, 123);</string>
     </property>
     <property name="text">
      <string>Gerar Senha</string>
@@ -305,7 +305,7 @@ background-color: rgb(68, 71, 90);</string>
      <x>0</x>
      <y>0</y>
      <width>465</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

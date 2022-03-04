@@ -1,12 +1,14 @@
 from PyQt5 import QtWidgets, uic
 from gerador_cli import gerar_senha
+from platform import system
 from ui.pop_up import pop_up
 
 def salvar_senha(senha):
 
     options = QtWidgets.QFileDialog.Options()
-    options |= QtWidgets.QFileDialog.DontUseNativeDialog
     options |= QtWidgets.QFileDialog.DontConfirmOverwrite
+    if system() == 'Linux':
+        options |= QtWidgets.QFileDialog.DontUseNativeDialog
 
     arquivo = QtWidgets.QFileDialog.getSaveFileName(
         None,

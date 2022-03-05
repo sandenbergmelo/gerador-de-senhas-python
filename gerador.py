@@ -44,19 +44,19 @@ def main():
 
         if tela.checkSalvarSenha.isChecked():# Se o usuário quer salvar a senha
             salvo = salvar_senha(senha)
-            if salvo:# Se a senha foi salva mostra uma mensagem de sucesso
+            if salvo:
                 pop_up(
                     'Senha Salva!',
                     QtWidgets.QMessageBox.Information,
                     'Senha salva com sucesso!'
                 )
-            else:# Senão, mostra uma mensagem de erro
+            else:
                 pop_up(
                     'Erro ao salvar senha!',
                     QtWidgets.QMessageBox.Critical,
                     'Erro ao salvar senha!'
                 )
-    else:# Se não há nenhuma senha gerada mostra uma mensagem de erro
+    else:
         pop_up(
             'Erro',
             QtWidgets.QMessageBox.Warning,
@@ -75,4 +75,3 @@ tela.pushSair.clicked.connect(app.quit)
 # Exibir tela
 tela.show()
 app.exec()
-oooo

@@ -208,8 +208,8 @@
     </property>
     <property name="font">
      <font>
-      <family>Monospace</family>
-      <pointsize>12</pointsize>
+      <family>Consolas, Monospace</family>
+      <pointsize>14</pointsize>
      </font>
     </property>
     <property name="cursor" stdset="0">

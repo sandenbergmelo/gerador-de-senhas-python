@@ -208,7 +208,7 @@
     </property>
     <property name="font">
      <font>
-      <family>Consolas, Monospace</family>
+      <family>Consolas, Fira Mono, Fira Code, Courier New, Monospace</family>
       <pointsize>14</pointsize>
      </font>
     </property>

@@ -67,6 +67,8 @@ def main():
 app = QtWidgets.QApplication([])
 tela = uic.loadUi("gui/ui/tela.ui")
 
+app.setStyle('Fusion')
+
 # Eventos dos botões da tela
 tela.pushGerarSenha.clicked.connect(main)
 tela.pushLimpar.clicked.connect(tela.listSaida.clear)

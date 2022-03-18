@@ -22,8 +22,8 @@
      <rect>
       <x>40</x>
       <y>20</y>
-      <width>169</width>
-      <height>22</height>
+      <width>181</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
@@ -43,8 +43,8 @@
      <rect>
       <x>40</x>
       <y>60</y>
-      <width>198</width>
-      <height>22</height>
+      <width>212</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
@@ -64,8 +64,8 @@
      <rect>
       <x>40</x>
       <y>100</y>
-      <width>293</width>
-      <height>22</height>
+      <width>311</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
@@ -107,7 +107,7 @@
    <widget class="QSpinBox" name="spinLetras">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>230</x>
       <y>20</y>
       <width>46</width>
       <height>28</height>
@@ -131,7 +131,7 @@
    <widget class="QSpinBox" name="spinNumeros">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>260</x>
       <y>60</y>
       <width>46</width>
       <height>28</height>
@@ -155,7 +155,7 @@
    <widget class="QSpinBox" name="spinCaracteres">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>360</x>
       <y>100</y>
       <width>46</width>
       <height>28</height>
@@ -305,7 +305,7 @@ background-color: rgb(68, 71, 90);</string>
      <x>0</x>
      <y>0</y>
      <width>465</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

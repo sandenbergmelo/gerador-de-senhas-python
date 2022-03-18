@@ -1,6 +1,6 @@
+from platform import system
 from PyQt5 import QtWidgets, uic
 from gerador_cli import gerar_senha
-from platform import system
 from gui.pop_up import pop_up
 
 def salvar_senha(senha):
@@ -26,6 +26,7 @@ def salvar_senha(senha):
     with open(arquivo, 'a') as senhas:
             senhas.write(f'{senha}\n')
     return True
+
 
 def main():
     

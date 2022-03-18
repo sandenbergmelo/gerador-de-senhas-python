@@ -5,4 +5,5 @@ def pop_up(titulo, icone, texto):
     msg.setWindowTitle(titulo)
     msg.setIcon(icone)
     msg.setText(texto)
+    msg.setStyleSheet('color: #f8f8f2; background-color: #282a36;')
     msg.exec()

@@ -4,7 +4,6 @@ from gerador_cli import gerar_senha
 from gui.pop_up import pop_up
 
 def salvar_senha(senha):
-
     # Opções de salvamento
     options = QtWidgets.QFileDialog.Options()
     options |= QtWidgets.QFileDialog.DontConfirmOverwrite
@@ -18,10 +17,10 @@ def salvar_senha(senha):
         filter='Arquivo de texto (*.txt);;Todos os arquivos (*)',
         options=options
     )[0]
-    
+
     if arquivo == '': # Se o usuário não selecionou um arquivo
         return False
-    
+
     # Salva a senha no arquivo
     with open(arquivo, 'a') as senhas:
             senhas.write(f'{senha}\n')
@@ -29,7 +28,6 @@ def salvar_senha(senha):
 
 
 def main():
-    
     # Pega os valores dos campos
     letras = int(tela.spinLetras.value())
     numeros = int(tela.spinNumeros.value())

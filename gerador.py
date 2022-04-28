@@ -33,34 +33,40 @@ def main():
     numeros = int(tela.spinNumeros.value())
     caracteres = int(tela.spinCaracteres.value())
 
-    if letras != 0 or numeros != 0 or caracteres != 0:
-        senha = gerar_senha(letras, numeros, caracteres)
-
-        # Mostra a senha na tela
-        saida = tela.listSaida
-        saida.addItem(senha)
-        saida.scrollToBottom()
-
-        if tela.checkSalvarSenha.isChecked():# Se o usuário quer salvar a senha
-            salvo = salvar_senha(senha)
-            if salvo:# Se a senha foi salva mostra uma mensagem de sucesso
-                pop_up(
-                    'Senha Salva!',
-                    QtWidgets.QMessageBox.Information,
-                    'Senha salva com sucesso!'
-                )
-            else:# Se não foi salva mostra uma mensagem de erro
-                pop_up(
-                    'Erro ao salvar senha!',
-                    QtWidgets.QMessageBox.Critical,
-                    'Erro ao salvar senha!'
-                )
-    else:
+    if letras == 0 and numeros == 0 and caracteres == 0:
         pop_up(
             'Erro',
             QtWidgets.QMessageBox.Warning,
             'Impossível gerar senha vazia!'
         )
+        return
+
+    senha = gerar_senha(letras, numeros, caracteres)
+
+    # Mostra a senha na tela
+    saida = tela.listSaida
+    saida.addItem(senha)
+    saida.scrollToBottom()
+
+    if not tela.checkSalvarSenha.isChecked():
+        # Se o usuário não quer salvar a senha, retorna
+        return
+
+    salvo = salvar_senha(senha)
+    if not salvo:
+        # Se a senha não foi salva mostra uma mensagem de erro e retorna
+        pop_up(
+            'Erro ao salvar senha!',
+            QtWidgets.QMessageBox.Critical,
+            'Erro ao salvar senha!'
+        )
+        return
+
+    pop_up(
+        'Senha Salva!',
+        QtWidgets.QMessageBox.Information,
+        'Senha salva com sucesso!'
+    )
 
 # Inicialização do programa
 app = QtWidgets.QApplication([])

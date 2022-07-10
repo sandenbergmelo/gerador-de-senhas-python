@@ -40,12 +40,9 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    if args.salvar != False:
-        args.salvar = True
-
     senha = gerar_senha(args.letras, args.numeros, args.chars)
 
     print(senha)
 
-    if args.salvar:
+    if args.salvar != False:
         print(salvar_senha(senha))

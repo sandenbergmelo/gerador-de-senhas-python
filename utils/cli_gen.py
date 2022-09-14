@@ -1,48 +1,56 @@
 from random import shuffle, choice
 from string import ascii_letters, digits
 
-symbols  = '@#.,*%+=-!?&'
+symbols = '@#.,*%+=-!?&'
 
-# Funções
-def gerar_senha(letras=8, numeros=4, caracteres_especiais=2):
+
+def generate_password(letras=8, numeros=4, caracteres_especiais=2):
     generated = ''
-    generated += gerar_caracteres(letras, ascii_letters)
-    generated += gerar_caracteres(numeros, digits)
-    generated += gerar_caracteres(caracteres_especiais, symbols)
+    generated += generate_chars(letras, ascii_letters)
+    generated += generate_chars(numeros, digits)
+    generated += generate_chars(caracteres_especiais, symbols)
 
-    senha = embaralhar_caracteres(generated)
-    return senha
+    password = shuffle_chars(generated)
+    return password
 
-def gerar_caracteres(length, chars):
+
+def generate_chars(length, chars):
     generated = ''
     for _ in range(length):
         generated += choice(chars)
     return generated
 
-def embaralhar_caracteres(chars):
+
+def shuffle_chars(chars):
     chars = list(chars)
     shuffle(chars)
     return ''.join(chars)
 
-def salvar_senha(senha):
-    with open('senhas.txt', 'a') as senhas:
-        senhas.write(f'{senha}\n')
+
+def save_password(senha):
+    with open('senhas.txt', 'a') as passwords:
+        passwords.write(f'{senha}\n')
     return 'Senha salva em senhas.txt'
+
 
 if __name__ == '__main__':
     from argparse import ArgumentParser
 
     parser = ArgumentParser()
-    parser.add_argument('--letras', '-l',type=int, default=8, help='Quantidade de letras')
-    parser.add_argument('--numeros', '-n',type=int, default=4, help='Quantidade de números')
-    parser.add_argument('--chars', '-c',type=int, default=2, help='Quantidade de caracteres especiais')
-    parser.add_argument('--salvar', '-s', type=bool, nargs='?', default=False, help='Salvar senha em arquivo txt')
+    parser.add_argument('--letras', '-l', type=int,
+                        default=8, help='Quantidade de letras')
+    parser.add_argument('--numeros', '-n', type=int,
+                        default=4, help='Quantidade de números')
+    parser.add_argument('--chars', '-c', type=int, default=2,
+                        help='Quantidade de caracteres especiais')
+    parser.add_argument('--salvar', '-s', type=bool, nargs='?',
+                        default=False, help='Salvar senha em arquivo txt')
 
     args = parser.parse_args()
 
-    senha = gerar_senha(args.letras, args.numeros, args.chars)
+    password = generate_password(args.letras, args.numeros, args.chars)
 
-    print(senha)
+    print(password)
 
     if args.salvar != False:
-        print(salvar_senha(senha))
+        print(save_password(password))

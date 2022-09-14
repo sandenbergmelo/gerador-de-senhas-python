@@ -3,7 +3,7 @@ from platform import system
 from PySide6.QtWidgets import QMainWindow, QFileDialog
 
 from utils.pop_up import pop_up
-from utils.cli_gen import gerar_senha
+from utils.cli_gen import generate_password
 from interface.ui_main_window import Ui_MainWindow
 
 
@@ -53,7 +53,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             pop_up('Erro', 'Impossível gerar senha vazia!', 'critical')
             return
 
-        senha = gerar_senha(letras, numeros, caracteres)
+        senha = generate_password(letras, numeros, caracteres)
 
         # Mostra a senha na tela
         self.listSaida.addItem(senha)

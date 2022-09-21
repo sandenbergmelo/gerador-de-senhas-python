@@ -5,7 +5,8 @@ def pop_up(title, txt, icon='information'):
     icons = {'information': QMessageBox.Information,
              'warning': QMessageBox.Warning,
              'critical': QMessageBox.Critical,
-             'question': QMessageBox.Question}
+             'question': QMessageBox.Question,
+             'no_icon': QMessageBox.NoIcon}
 
     msg = QMessageBox()
     msg.setWindowTitle(title)

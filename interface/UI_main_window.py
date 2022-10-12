@@ -15,8 +15,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QGridLayout,
-    QHBoxLayout, QLabel, QListView, QListWidget,
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QHBoxLayout,
+    QLabel, QLayout, QListView, QListWidget,
     QListWidgetItem, QMainWindow, QMenuBar, QPushButton,
     QSizePolicy, QSpacerItem, QSpinBox, QVBoxLayout,
     QWidget)
@@ -29,8 +29,8 @@ class Ui_MainWindow(object):
         MainWindow.setStyleSheet(u"background-color: rgb(40, 42, 54);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayout_5 = QVBoxLayout(self.centralwidget)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout = QVBoxLayout(self.centralwidget)
+        self.verticalLayout.setObjectName(u"verticalLayout")
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.verticalLayout_2 = QVBoxLayout()
@@ -100,7 +100,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addItem(self.horizontalSpacer)
 
 
-        self.verticalLayout_5.addLayout(self.horizontalLayout_2)
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
 
         self.checkSalvarSenha = QCheckBox(self.centralwidget)
         self.checkSalvarSenha.setObjectName(u"checkSalvarSenha")
@@ -110,42 +110,47 @@ class Ui_MainWindow(object):
         self.checkSalvarSenha.setCursor(QCursor(Qt.PointingHandCursor))
         self.checkSalvarSenha.setStyleSheet(u"color: rgb(248, 248, 242);")
 
-        self.verticalLayout_5.addWidget(self.checkSalvarSenha)
+        self.verticalLayout.addWidget(self.checkSalvarSenha)
 
-        self.gridLayout = QGridLayout()
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.verticalLayout = QVBoxLayout()
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.buttonsLayout = QHBoxLayout()
+        self.buttonsLayout.setSpacing(8)
+        self.buttonsLayout.setObjectName(u"buttonsLayout")
+        self.buttonsLayout.setSizeConstraint(QLayout.SetMaximumSize)
+        self.buttonsLayout.setContentsMargins(5, 5, 5, 5)
         self.pushGerarSenha = QPushButton(self.centralwidget)
         self.pushGerarSenha.setObjectName(u"pushGerarSenha")
+        self.pushGerarSenha.setMinimumSize(QSize(0, 40))
         font3 = QFont()
         font3.setPointSize(14)
         self.pushGerarSenha.setFont(font3)
         self.pushGerarSenha.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushGerarSenha.setStyleSheet(u"background-color: rgb(80, 250, 123);")
 
-        self.horizontalLayout.addWidget(self.pushGerarSenha)
+        self.buttonsLayout.addWidget(self.pushGerarSenha)
 
         self.pushLimpar = QPushButton(self.centralwidget)
         self.pushLimpar.setObjectName(u"pushLimpar")
+        self.pushLimpar.setMinimumSize(QSize(0, 40))
         self.pushLimpar.setFont(font3)
         self.pushLimpar.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushLimpar.setStyleSheet(u"background-color: rgb(98, 114, 164);")
 
-        self.horizontalLayout.addWidget(self.pushLimpar)
+        self.buttonsLayout.addWidget(self.pushLimpar)
 
         self.pushSair = QPushButton(self.centralwidget)
         self.pushSair.setObjectName(u"pushSair")
+        self.pushSair.setMinimumSize(QSize(0, 40))
         self.pushSair.setFont(font3)
         self.pushSair.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushSair.setStyleSheet(u"background-color: rgb(255, 85, 85);")
 
-        self.horizontalLayout.addWidget(self.pushSair)
+        self.buttonsLayout.addWidget(self.pushSair)
 
+        self.buttonsLayout.setStretch(0, 3)
+        self.buttonsLayout.setStretch(1, 2)
+        self.buttonsLayout.setStretch(2, 2)
 
-        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.verticalLayout.addLayout(self.buttonsLayout)
 
         self.listSaida = QListWidget(self.centralwidget)
         self.listSaida.setObjectName(u"listSaida")
@@ -170,12 +175,6 @@ class Ui_MainWindow(object):
         self.listSaida.setSelectionRectVisible(True)
 
         self.verticalLayout.addWidget(self.listSaida)
-
-
-        self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
-
-
-        self.verticalLayout_5.addLayout(self.gridLayout)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)

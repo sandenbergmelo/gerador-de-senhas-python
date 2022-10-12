@@ -4,7 +4,7 @@ from PySide6.QtWidgets import QMainWindow, QFileDialog
 
 from utils.pop_up import pop_up
 from utils.cli_gen import generate_password
-from interface.ui_main_window import Ui_MainWindow
+from interface.UI_main_window import Ui_MainWindow
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -30,7 +30,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         arquivo = QFileDialog.getSaveFileName(  # Abre janela de salvamento
             self,
             caption='Salvar senha',
-            directory='senhas.txt',
+            dir='senhas.txt',
             filter='Arquivo de texto (*.txt);;Todos os arquivos (*)',
             options=options
         )[0]
@@ -67,7 +67,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         if not salvo:
             # Se a senha não foi salva mostra uma mensagem de erro e retorna
-            pop_up('Erro!', 'Erro ao salvar senha!', 'critical')
+            pop_up('Erro!', 'Erro ao salvar senha!', 'information')
             return
 
         pop_up('Senha Salva!', 'Senha salva com sucesso!', 'information')

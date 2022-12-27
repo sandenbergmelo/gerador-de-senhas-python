@@ -1,6 +1,7 @@
 from platform import system
 
 from PySide6.QtWidgets import QMainWindow, QFileDialog
+from PySide6.QtCore import QSize
 
 from utils.pop_up import pop_up
 from utils.cli_gen import generate_password
@@ -16,9 +17,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushGerarSenha.clicked.connect(self.main)
         self.pushLimpar.clicked.connect(self.listSaida.clear)
         self.pushSair.clicked.connect(self.close)
-
-    def clear_output(self):
-        self.listSaida.clear()
 
     def save_password(self, password):
         # Opções de salvamento

@@ -1,6 +1,8 @@
-from random import shuffle, choice
+from secrets import SystemRandom
 from string import ascii_letters, digits
 
+
+random = SystemRandom()
 symbols = '@#.,*%+=-!?&'
 
 
@@ -17,13 +19,13 @@ def generate_password(letras=8, numeros=4, caracteres_especiais=2):
 def generate_chars(length, chars):
     generated = ''
     for _ in range(length):
-        generated += choice(chars)
+        generated += random.choice(chars)
     return generated
 
 
 def shuffle_chars(chars):
     chars = list(chars)
-    shuffle(chars)
+    random.shuffle(chars)
     return ''.join(chars)
 
 

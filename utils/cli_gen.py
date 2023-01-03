@@ -1,3 +1,4 @@
+from pathlib import Path
 from secrets import SystemRandom
 from string import ascii_letters, digits
 
@@ -29,10 +30,9 @@ def shuffle_chars(chars):
     return ''.join(chars)
 
 
-def save_password(senha):
-    with open('senhas.txt', 'a') as passwords:
+def save_password(senha, arquivo='senhas.txt'):
+    with open(arquivo, 'a') as passwords:
         passwords.write(f'{senha}\n')
-    return 'Senha salva em senhas.txt'
 
 
 if __name__ == '__main__':
@@ -47,6 +47,8 @@ if __name__ == '__main__':
                         help='Quantidade de caracteres especiais')
     parser.add_argument('--salvar', '-s', type=bool, nargs='?',
                         default=False, help='Salvar senha em arquivo txt')
+    parser.add_argument('--output', '-o', type=str, nargs='?', default='',
+                        help='Arquivo de saída (Padrão "senhas.txt")',)
 
     args = parser.parse_args()
 
@@ -55,4 +57,15 @@ if __name__ == '__main__':
     print(password)
 
     if args.salvar != False:
-        print(save_password(password))
+        path = ''
+        if args.output != '':
+            path = args.output
+        if Path(path).is_dir():
+            path = Path(path) / 'senhas.txt'
+
+        if path != '' and path != None:
+            save_password(password, path)
+            print(f'Senha salva em {path}')
+        else:
+            save_password(password)
+            print('Senha salva em senhas.txt')

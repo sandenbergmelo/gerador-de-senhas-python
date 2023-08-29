@@ -1,7 +1,6 @@
 from platform import system
 
 from PySide6.QtWidgets import QMainWindow, QFileDialog
-from PySide6.QtCore import QSize
 
 from utils.pop_up import pop_up
 from utils.cli_gen import generate_password

@@ -2,7 +2,6 @@ from pathlib import Path
 from secrets import SystemRandom
 from string import ascii_letters, digits
 
-
 random = SystemRandom()
 symbols = '@#.,*%+=-!?&'
 

@@ -197,4 +197,3 @@ class Ui_MainWindow(object):
         self.pushLimpar.setText(QCoreApplication.translate("MainWindow", u"Limpar", None))
         self.pushSair.setText(QCoreApplication.translate("MainWindow", u"Sair", None))
     # retranslateUi
-

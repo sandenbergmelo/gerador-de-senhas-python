@@ -9,7 +9,7 @@ from utils.pop_up import pop_up
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
-        super().__init__()
+        super(MainWindow, self).__init__()
         self.setupUi(self)
 
         # Buttons actions
@@ -46,7 +46,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         numeros = int(self.spinNumeros.value())
         caracteres = int(self.spinCaracteres.value())
 
-        if letras == 0 and numeros == 0 and caracteres == 0:
+        if letras == numeros == caracteres == 0:
             pop_up('Erro', 'Impossível gerar senha vazia!', 'critical')
             return
 

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.2
+## Created by: Qt User Interface Compiler version 6.5.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -68,7 +68,9 @@ class Ui_MainWindow(object):
         font1 = QFont()
         font1.setPointSize(12)
         self.spinLetras.setFont(font1)
-        self.spinLetras.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.spinLetras.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+"background-color: rgb(255, 255, 255);\n"
+"")
         self.spinLetras.setMaximum(16)
         self.spinLetras.setValue(8)
 
@@ -77,7 +79,9 @@ class Ui_MainWindow(object):
         self.spinNumeros = QSpinBox(self.centralwidget)
         self.spinNumeros.setObjectName(u"spinNumeros")
         self.spinNumeros.setFont(font1)
-        self.spinNumeros.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.spinNumeros.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+"background-color: rgb(255, 255, 255);\n"
+"")
         self.spinNumeros.setMaximum(16)
         self.spinNumeros.setValue(4)
 
@@ -86,7 +90,9 @@ class Ui_MainWindow(object):
         self.spinCaracteres = QSpinBox(self.centralwidget)
         self.spinCaracteres.setObjectName(u"spinCaracteres")
         self.spinCaracteres.setFont(font1)
-        self.spinCaracteres.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.spinCaracteres.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+"background-color: rgb(255, 255, 255);\n"
+"")
         self.spinCaracteres.setMaximum(16)
         self.spinCaracteres.setValue(2)
 
@@ -197,3 +203,4 @@ class Ui_MainWindow(object):
         self.pushLimpar.setText(QCoreApplication.translate("MainWindow", u"Limpar", None))
         self.pushSair.setText(QCoreApplication.translate("MainWindow", u"Sair", None))
     # retranslateUi
+

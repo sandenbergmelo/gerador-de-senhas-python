@@ -79,7 +79,9 @@
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
+           <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+</string>
           </property>
           <property name="maximum">
            <number>16</number>
@@ -97,7 +99,9 @@
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
+           <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+</string>
           </property>
           <property name="maximum">
            <number>16</number>
@@ -115,7 +119,9 @@
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
+           <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+</string>
           </property>
           <property name="maximum">
            <number>16</number>

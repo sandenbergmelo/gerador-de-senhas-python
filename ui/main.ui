@@ -203,7 +203,8 @@ background-color: rgb(255, 255, 255);
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(80, 250, 123);</string>
+         <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(80, 250, 123);</string>
         </property>
         <property name="text">
          <string>Gerar Senha</string>
@@ -227,7 +228,8 @@ background-color: rgb(255, 255, 255);
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(98, 114, 164);</string>
+         <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(98, 114, 164);</string>
         </property>
         <property name="text">
          <string>Limpar</string>
@@ -251,7 +253,8 @@ background-color: rgb(255, 255, 255);
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 85, 85);</string>
+         <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 85, 85);</string>
         </property>
         <property name="text">
          <string>Sair</string>

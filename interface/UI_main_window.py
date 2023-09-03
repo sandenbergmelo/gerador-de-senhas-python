@@ -130,7 +130,8 @@ class Ui_MainWindow(object):
         font3.setPointSize(14)
         self.pushGerarSenha.setFont(font3)
         self.pushGerarSenha.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushGerarSenha.setStyleSheet(u"background-color: rgb(80, 250, 123);")
+        self.pushGerarSenha.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+"background-color: rgb(80, 250, 123);")
 
         self.buttonsLayout.addWidget(self.pushGerarSenha)
 
@@ -139,7 +140,8 @@ class Ui_MainWindow(object):
         self.pushLimpar.setMinimumSize(QSize(0, 40))
         self.pushLimpar.setFont(font3)
         self.pushLimpar.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushLimpar.setStyleSheet(u"background-color: rgb(98, 114, 164);")
+        self.pushLimpar.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+"background-color: rgb(98, 114, 164);")
 
         self.buttonsLayout.addWidget(self.pushLimpar)
 
@@ -148,7 +150,8 @@ class Ui_MainWindow(object):
         self.pushSair.setMinimumSize(QSize(0, 40))
         self.pushSair.setFont(font3)
         self.pushSair.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushSair.setStyleSheet(u"background-color: rgb(255, 85, 85);")
+        self.pushSair.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+"background-color: rgb(255, 85, 85);")
 
         self.buttonsLayout.addWidget(self.pushSair)
 

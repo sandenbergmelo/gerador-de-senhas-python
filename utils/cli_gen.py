@@ -3,38 +3,34 @@ from secrets import SystemRandom
 from string import ascii_letters, digits
 
 random = SystemRandom()
-symbols = '@#.,*%+=-!?&'
+chars = '@#.,*%+=-!?&'
 
 
-def generate_password(letras=8, numeros=4, caracteres_especiais=2):
-    generated = ''
-    generated += generate_chars(letras, ascii_letters)
-    generated += generate_chars(numeros, digits)
-    generated += generate_chars(caracteres_especiais, symbols)
+def generate_password(num_letters: int = 8, num_numbers: int = 4, num_chars: int = 2) -> str:
+    generated = generate_chars(num_letters, ascii_letters) + \
+        generate_chars(num_numbers, digits) + \
+        generate_chars(num_chars, chars)
 
-    password = shuffle_chars(generated)
+    password = str(shuffle_chars(generated))
     return password
 
 
-def generate_chars(length, chars):
-    generated = ''
-    for _ in range(length):
-        generated += random.choice(chars)
-    return generated
+def generate_chars(length: int, chars: str) -> str:
+    return ''.join(random.choice(chars) for _ in range(length))
 
 
-def shuffle_chars(chars):
+def shuffle_chars(chars: str) -> str:
     chars = list(chars)
     random.shuffle(chars)
     return ''.join(chars)
 
 
-def save_password(senha, arquivo='senhas.txt'):
-    with open(arquivo, 'a') as passwords:
-        passwords.write(f'{senha}\n')
+def save_password(password: str, file: str = 'senhas.txt') -> None:
+    with open(file, 'a') as passwords:
+        passwords.write(f'{password}\n')
 
 
-if __name__ == '__main__':
+def main() -> None:
     from argparse import ArgumentParser
 
     parser = ArgumentParser()
@@ -55,16 +51,17 @@ if __name__ == '__main__':
 
     print(password)
 
-    if args.salvar != False:
-        path = ''
-        if args.output != '':
-            path = args.output
-        if Path(path).is_dir():
-            path = Path(path) / 'senhas.txt'
+    if args.salvar:
+        path = Path(args.output)
+        if path.is_dir():
+            path /= 'senhas.txt'
 
-        if path != '' and path != None:
-            save_password(password, path)
-            print(f'Senha salva em {path}')
-        else:
-            save_password(password)
-            print('Senha salva em senhas.txt')
+        save_password(password, str(path))
+        print(f'Senha salva em {path}')
+        return
+
+    print('Senha não salva.')
+
+
+if __name__ == '__main__':
+    main()

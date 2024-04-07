@@ -17,14 +17,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushLimpar.clicked.connect(self.listSaida.clear)
         self.pushSair.clicked.connect(self.close)
 
-    def save_password(self, password):
-        # Opções de salvamento
+    def save_password(self, password: str) -> None:
+        # Save options for the file dialog
         options = QFileDialog.Options()
         options |= QFileDialog.DontConfirmOverwrite
         if system() == 'Linux':
             options |= QFileDialog.DontUseNativeDialog
 
-        arquivo = QFileDialog.getSaveFileName(  # Abre janela de salvamento
+        file_path = QFileDialog.getSaveFileName(  # Open the file dialog
             self,
             caption='Salvar senha',
             dir='senhas.txt',
@@ -32,37 +32,34 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             options=options
         )[0]
 
-        if arquivo == '':  # Se o usuário não selecionou um arquivo
+        if file_path == '':
             return False
 
-        # Salva a senha no arquivo
-        with open(arquivo, 'a') as senhas:
+        with open(file_path, 'a') as senhas:
             senhas.write(f'{password}\n')
+
         return True
 
-    def main(self):
-        # Pega os valores dos campos
-        letras = int(self.spinLetras.value())
-        numeros = int(self.spinNumeros.value())
-        caracteres = int(self.spinCaracteres.value())
+    def main(self)->None:
+        num_letters = int(self.spinLetras.value())
+        num_numbers = int(self.spinNumeros.value())
+        num_chars = int(self.spinCaracteres.value())
 
-        if letras == numeros == caracteres == 0:
+        if num_letters == num_numbers == num_chars == 0:
             pop_up('Erro', 'Impossível gerar senha vazia!', 'critical')
             return
 
-        senha = generate_password(letras, numeros, caracteres)
+        password = generate_password(num_letters, num_numbers, num_chars)
 
-        # Mostra a senha na tela
-        self.listSaida.addItem(senha)
+        self.listSaida.addItem(password)
         self.listSaida.scrollToBottom()
 
         if not self.checkSalvarSenha.isChecked():
-            # Se o usuário não quer salvar a senha, retorna
             return
 
-        salvo = self.save_password(senha)
+        saved = self.save_password(password)
 
-        if not salvo:
+        if not saved:
             # Se a senha não foi salva mostra uma mensagem de erro e retorna
             pop_up('Erro!', 'Erro ao salvar senha!', 'information')
             return

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.2
+## Created by: Qt User Interface Compiler version 6.5.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -63,40 +63,40 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.spinLetras = QSpinBox(self.centralwidget)
-        self.spinLetras.setObjectName(u"spinLetras")
+        self.spinLetters = QSpinBox(self.centralwidget)
+        self.spinLetters.setObjectName(u"spinLetters")
         font1 = QFont()
         font1.setPointSize(12)
-        self.spinLetras.setFont(font1)
-        self.spinLetras.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+        self.spinLetters.setFont(font1)
+        self.spinLetters.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "background-color: rgb(255, 255, 255);\n"
 "")
-        self.spinLetras.setMaximum(16)
-        self.spinLetras.setValue(8)
+        self.spinLetters.setMaximum(16)
+        self.spinLetters.setValue(8)
 
-        self.verticalLayout_3.addWidget(self.spinLetras)
+        self.verticalLayout_3.addWidget(self.spinLetters)
 
-        self.spinNumeros = QSpinBox(self.centralwidget)
-        self.spinNumeros.setObjectName(u"spinNumeros")
-        self.spinNumeros.setFont(font1)
-        self.spinNumeros.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+        self.spinNumbers = QSpinBox(self.centralwidget)
+        self.spinNumbers.setObjectName(u"spinNumbers")
+        self.spinNumbers.setFont(font1)
+        self.spinNumbers.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "background-color: rgb(255, 255, 255);\n"
 "")
-        self.spinNumeros.setMaximum(16)
-        self.spinNumeros.setValue(4)
+        self.spinNumbers.setMaximum(16)
+        self.spinNumbers.setValue(4)
 
-        self.verticalLayout_3.addWidget(self.spinNumeros)
+        self.verticalLayout_3.addWidget(self.spinNumbers)
 
-        self.spinCaracteres = QSpinBox(self.centralwidget)
-        self.spinCaracteres.setObjectName(u"spinCaracteres")
-        self.spinCaracteres.setFont(font1)
-        self.spinCaracteres.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+        self.spinChars = QSpinBox(self.centralwidget)
+        self.spinChars.setObjectName(u"spinChars")
+        self.spinChars.setFont(font1)
+        self.spinChars.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "background-color: rgb(255, 255, 255);\n"
 "")
-        self.spinCaracteres.setMaximum(16)
-        self.spinCaracteres.setValue(2)
+        self.spinChars.setMaximum(16)
+        self.spinChars.setValue(2)
 
-        self.verticalLayout_3.addWidget(self.spinCaracteres)
+        self.verticalLayout_3.addWidget(self.spinChars)
 
 
         self.horizontalLayout_2.addLayout(self.verticalLayout_3)
@@ -108,52 +108,52 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout_2)
 
-        self.checkSalvarSenha = QCheckBox(self.centralwidget)
-        self.checkSalvarSenha.setObjectName(u"checkSalvarSenha")
+        self.checkSavePassword = QCheckBox(self.centralwidget)
+        self.checkSavePassword.setObjectName(u"checkSavePassword")
         font2 = QFont()
         font2.setPointSize(11)
-        self.checkSalvarSenha.setFont(font2)
-        self.checkSalvarSenha.setCursor(QCursor(Qt.PointingHandCursor))
-        self.checkSalvarSenha.setStyleSheet(u"color: rgb(248, 248, 242);")
+        self.checkSavePassword.setFont(font2)
+        self.checkSavePassword.setCursor(QCursor(Qt.PointingHandCursor))
+        self.checkSavePassword.setStyleSheet(u"color: rgb(248, 248, 242);")
 
-        self.verticalLayout.addWidget(self.checkSalvarSenha)
+        self.verticalLayout.addWidget(self.checkSavePassword)
 
         self.buttonsLayout = QHBoxLayout()
         self.buttonsLayout.setSpacing(8)
         self.buttonsLayout.setObjectName(u"buttonsLayout")
         self.buttonsLayout.setSizeConstraint(QLayout.SetMaximumSize)
         self.buttonsLayout.setContentsMargins(5, 5, 5, 5)
-        self.pushGerarSenha = QPushButton(self.centralwidget)
-        self.pushGerarSenha.setObjectName(u"pushGerarSenha")
-        self.pushGerarSenha.setMinimumSize(QSize(0, 40))
+        self.pushGeneratePassword = QPushButton(self.centralwidget)
+        self.pushGeneratePassword.setObjectName(u"pushGeneratePassword")
+        self.pushGeneratePassword.setMinimumSize(QSize(0, 40))
         font3 = QFont()
         font3.setPointSize(14)
-        self.pushGerarSenha.setFont(font3)
-        self.pushGerarSenha.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushGerarSenha.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+        self.pushGeneratePassword.setFont(font3)
+        self.pushGeneratePassword.setCursor(QCursor(Qt.PointingHandCursor))
+        self.pushGeneratePassword.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "background-color: rgb(80, 250, 123);")
 
-        self.buttonsLayout.addWidget(self.pushGerarSenha)
+        self.buttonsLayout.addWidget(self.pushGeneratePassword)
 
-        self.pushLimpar = QPushButton(self.centralwidget)
-        self.pushLimpar.setObjectName(u"pushLimpar")
-        self.pushLimpar.setMinimumSize(QSize(0, 40))
-        self.pushLimpar.setFont(font3)
-        self.pushLimpar.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushLimpar.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+        self.pushClean = QPushButton(self.centralwidget)
+        self.pushClean.setObjectName(u"pushClean")
+        self.pushClean.setMinimumSize(QSize(0, 40))
+        self.pushClean.setFont(font3)
+        self.pushClean.setCursor(QCursor(Qt.PointingHandCursor))
+        self.pushClean.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "background-color: rgb(98, 114, 164);")
 
-        self.buttonsLayout.addWidget(self.pushLimpar)
+        self.buttonsLayout.addWidget(self.pushClean)
 
-        self.pushSair = QPushButton(self.centralwidget)
-        self.pushSair.setObjectName(u"pushSair")
-        self.pushSair.setMinimumSize(QSize(0, 40))
-        self.pushSair.setFont(font3)
-        self.pushSair.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushSair.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+        self.pushExit = QPushButton(self.centralwidget)
+        self.pushExit.setObjectName(u"pushExit")
+        self.pushExit.setMinimumSize(QSize(0, 40))
+        self.pushExit.setFont(font3)
+        self.pushExit.setCursor(QCursor(Qt.PointingHandCursor))
+        self.pushExit.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "background-color: rgb(255, 85, 85);")
 
-        self.buttonsLayout.addWidget(self.pushSair)
+        self.buttonsLayout.addWidget(self.pushExit)
 
         self.buttonsLayout.setStretch(0, 3)
         self.buttonsLayout.setStretch(1, 2)
@@ -161,29 +161,29 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addLayout(self.buttonsLayout)
 
-        self.listSaida = QListWidget(self.centralwidget)
-        self.listSaida.setObjectName(u"listSaida")
+        self.listOutput = QListWidget(self.centralwidget)
+        self.listOutput.setObjectName(u"listOutput")
         font4 = QFont()
         font4.setFamilies([u"Monospace"])
         font4.setPointSize(14)
-        self.listSaida.setFont(font4)
-        self.listSaida.viewport().setProperty("cursor", QCursor(Qt.ArrowCursor))
-        self.listSaida.setContextMenuPolicy(Qt.DefaultContextMenu)
-        self.listSaida.setStyleSheet(u"color: rgb(248, 248, 242);\n"
+        self.listOutput.setFont(font4)
+        self.listOutput.viewport().setProperty("cursor", QCursor(Qt.ArrowCursor))
+        self.listOutput.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.listOutput.setStyleSheet(u"color: rgb(248, 248, 242);\n"
 "background-color: rgb(68, 71, 90);")
-        self.listSaida.setAutoScrollMargin(16)
-        self.listSaida.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.listSaida.setProperty("showDropIndicator", False)
-        self.listSaida.setDragEnabled(False)
-        self.listSaida.setDragDropOverwriteMode(False)
-        self.listSaida.setDragDropMode(QAbstractItemView.DragOnly)
-        self.listSaida.setSelectionMode(QAbstractItemView.SingleSelection)
-        self.listSaida.setMovement(QListView.Free)
-        self.listSaida.setProperty("isWrapping", False)
-        self.listSaida.setResizeMode(QListView.Fixed)
-        self.listSaida.setSelectionRectVisible(True)
+        self.listOutput.setAutoScrollMargin(16)
+        self.listOutput.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.listOutput.setProperty("showDropIndicator", False)
+        self.listOutput.setDragEnabled(False)
+        self.listOutput.setDragDropOverwriteMode(False)
+        self.listOutput.setDragDropMode(QAbstractItemView.DragOnly)
+        self.listOutput.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.listOutput.setMovement(QListView.Free)
+        self.listOutput.setProperty("isWrapping", False)
+        self.listOutput.setResizeMode(QListView.Fixed)
+        self.listOutput.setSelectionRectVisible(True)
 
-        self.verticalLayout.addWidget(self.listSaida)
+        self.verticalLayout.addWidget(self.listOutput)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -201,9 +201,9 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"Quantidate de letras:", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Quantidade de n\u00fameros:", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Quantidade de caracteres especiais:", None))
-        self.checkSalvarSenha.setText(QCoreApplication.translate("MainWindow", u"Salvar senha", None))
-        self.pushGerarSenha.setText(QCoreApplication.translate("MainWindow", u"Gerar Senha", None))
-        self.pushLimpar.setText(QCoreApplication.translate("MainWindow", u"Limpar", None))
-        self.pushSair.setText(QCoreApplication.translate("MainWindow", u"Sair", None))
+        self.checkSavePassword.setText(QCoreApplication.translate("MainWindow", u"Salvar senha", None))
+        self.pushGeneratePassword.setText(QCoreApplication.translate("MainWindow", u"Gerar Senha", None))
+        self.pushClean.setText(QCoreApplication.translate("MainWindow", u"Limpar", None))
+        self.pushExit.setText(QCoreApplication.translate("MainWindow", u"Sair", None))
     # retranslateUi
 

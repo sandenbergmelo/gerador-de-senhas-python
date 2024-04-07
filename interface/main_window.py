@@ -13,9 +13,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
 
         # Buttons actions
-        self.pushGerarSenha.clicked.connect(self.main)
-        self.pushLimpar.clicked.connect(self.listSaida.clear)
-        self.pushSair.clicked.connect(self.close)
+        self.pushGeneratePassword.clicked.connect(self.main)
+        self.pushClean.clicked.connect(self.listOutput.clear)
+        self.pushExit.clicked.connect(self.close)
 
     def save_password(self, password: str) -> None:
         # Save options for the file dialog
@@ -40,10 +40,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         return True
 
-    def main(self)->None:
-        num_letters = int(self.spinLetras.value())
-        num_numbers = int(self.spinNumeros.value())
-        num_chars = int(self.spinCaracteres.value())
+    def main(self) -> None:
+        num_letters = int(self.spinLetters.value())
+        num_numbers = int(self.spinNumbers.value())
+        num_chars = int(self.spinChars.value())
 
         if num_letters == num_numbers == num_chars == 0:
             pop_up('Erro', 'Impossível gerar senha vazia!', 'critical')
@@ -51,10 +51,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         password = generate_password(num_letters, num_numbers, num_chars)
 
-        self.listSaida.addItem(password)
-        self.listSaida.scrollToBottom()
+        self.listOutput.addItem(password)
+        self.listOutput.scrollToBottom()
 
-        if not self.checkSalvarSenha.isChecked():
+        if not self.checkSavePassword.isChecked():
             return
 
         saved = self.save_password(password)

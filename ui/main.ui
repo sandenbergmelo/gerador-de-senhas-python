@@ -72,7 +72,7 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
-         <widget class="QSpinBox" name="spinLetras">
+         <widget class="QSpinBox" name="spinLetters">
           <property name="font">
            <font>
             <pointsize>12</pointsize>
@@ -92,7 +92,7 @@ background-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinNumeros">
+         <widget class="QSpinBox" name="spinNumbers">
           <property name="font">
            <font>
             <pointsize>12</pointsize>
@@ -112,7 +112,7 @@ background-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinCaracteres">
+         <widget class="QSpinBox" name="spinChars">
           <property name="font">
            <font>
             <pointsize>12</pointsize>
@@ -149,7 +149,7 @@ background-color: rgb(255, 255, 255);
      </layout>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkSalvarSenha">
+     <widget class="QCheckBox" name="checkSavePassword">
       <property name="font">
        <font>
         <pointsize>11</pointsize>
@@ -187,7 +187,7 @@ background-color: rgb(255, 255, 255);
        <number>5</number>
       </property>
       <item>
-       <widget class="QPushButton" name="pushGerarSenha">
+       <widget class="QPushButton" name="pushGeneratePassword">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -212,7 +212,7 @@ background-color: rgb(80, 250, 123);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushLimpar">
+       <widget class="QPushButton" name="pushClean">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -237,7 +237,7 @@ background-color: rgb(98, 114, 164);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushSair">
+       <widget class="QPushButton" name="pushExit">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -264,7 +264,7 @@ background-color: rgb(255, 85, 85);</string>
      </layout>
     </item>
     <item>
-     <widget class="QListWidget" name="listSaida">
+     <widget class="QListWidget" name="listOutput">
       <property name="font">
        <font>
         <family>Monospace</family>

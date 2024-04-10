@@ -20,9 +20,9 @@ def generate_chars(length: int, chars: str) -> str:
 
 
 def shuffle_chars(chars: str) -> str:
-    chars = list(chars)
-    random.shuffle(chars)
-    return ''.join(chars)
+    char_list = list(chars)
+    random.shuffle(char_list)
+    return ''.join(char_list)
 
 
 def save_password(password: str, file: str = 'senhas.txt') -> None:

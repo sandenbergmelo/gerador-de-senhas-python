@@ -4,7 +4,8 @@ from PySide6.QtWidgets import QFileDialog, QMainWindow
 
 from interface.UI_main_window import Ui_MainWindow
 from utils.cli_gen import generate_password
-from utils.pop_up import pop_up
+from utils.msg_box import msg_box
+from PySide6.QtWidgets import QFileDialog
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -17,14 +18,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushClean.clicked.connect(self.listOutput.clear)
         self.pushExit.clicked.connect(self.close)
 
-    def save_password(self, password: str) -> None:
+    def save_password(self, password: str) -> bool:
         # Save options for the file dialog
-        options = QFileDialog.Options()
-        options |= QFileDialog.DontConfirmOverwrite
-        if system() == 'Linux':
-            options |= QFileDialog.DontUseNativeDialog
+        file_dialog = QFileDialog()
 
-        file_path = QFileDialog.getSaveFileName(  # Open the file dialog
+        options = file_dialog.options()
+        options |= file_dialog.Option.DontConfirmOverwrite
+        if system() == 'Linux':
+            options |= file_dialog.Option.DontUseNativeDialog
+
+        file_path = file_dialog.getSaveFileName(  # Open the file dialog
             self,
             caption='Salvar senha',
             dir='senhas.txt',
@@ -46,7 +49,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         num_chars = int(self.spinChars.value())
 
         if num_letters == num_numbers == num_chars == 0:
-            pop_up('Erro', 'Impossível gerar senha vazia!', 'critical')
+            msg_box('Erro', 'Impossível gerar senha vazia!', 'critical')
             return
 
         password = generate_password(num_letters, num_numbers, num_chars)
@@ -61,7 +64,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         if not saved:
             # Se a senha não foi salva mostra uma mensagem de erro e retorna
-            pop_up('Erro!', 'Erro ao salvar senha!', 'information')
+            msg_box('Erro!', 'Erro ao salvar senha!', 'information')
             return
 
-        pop_up('Senha Salva!', 'Senha salva com sucesso!', 'information')
+        msg_box('Senha Salva!', 'Senha salva com sucesso!', 'information')

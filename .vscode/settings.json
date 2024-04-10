@@ -3,5 +3,6 @@
         "Dont",
         "numeros",
         "Numeros"
-    ]
+    ],
+    "python.analysis.typeCheckingMode": "basic"
 }

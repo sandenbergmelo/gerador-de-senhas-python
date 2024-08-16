@@ -2,10 +2,9 @@ from platform import system
 
 from PySide6.QtWidgets import QFileDialog, QMainWindow
 
-from interface.UI_main_window import Ui_MainWindow
+from interface.ui_main_window import Ui_MainWindow
 from utils.cli_gen import generate_password
 from utils.msg_box import msg_box
-from PySide6.QtWidgets import QFileDialog
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -32,13 +31,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             caption='Salvar senha',
             dir='senhas.txt',
             filter='Arquivo de texto (*.txt);;Todos os arquivos (*)',
-            options=options
+            options=options,
         )[0]
 
-        if file_path == '':
+        if not file_path:
             return False
 
-        with open(file_path, 'a') as senhas:
+        with open(file_path, 'a') as senhas:  # noqa: PLW1514
             senhas.write(f'{password}\n')
 
         return True

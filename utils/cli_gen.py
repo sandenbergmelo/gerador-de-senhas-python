@@ -6,10 +6,14 @@ random = SystemRandom()
 chars = '@#.,*%+=-!?&'
 
 
-def generate_password(num_letters: int = 8, num_numbers: int = 4, num_chars: int = 2) -> str:
-    generated = generate_chars(num_letters, ascii_letters) + \
-        generate_chars(num_numbers, digits) + \
-        generate_chars(num_chars, chars)
+def generate_password(
+    num_letters: int = 8, num_numbers: int = 4, num_chars: int = 2
+) -> str:
+    generated = (
+        generate_chars(num_letters, ascii_letters)
+        + generate_chars(num_numbers, digits)
+        + generate_chars(num_chars, chars)
+    )
 
     password = str(shuffle_chars(generated))
     return password
@@ -26,24 +30,43 @@ def shuffle_chars(chars: str) -> str:
 
 
 def save_password(password: str, file: str = 'senhas.txt') -> None:
-    with open(file, 'a') as passwords:
+    with open(file, 'a') as passwords:  # noqa: PLW1514
         passwords.write(f'{password}\n')
 
 
 def main() -> None:
-    from argparse import ArgumentParser
+    from argparse import ArgumentParser  # noqa: PLC0415
 
     parser = ArgumentParser()
-    parser.add_argument('--letras', '-l', type=int,
-                        default=8, help='Quantidade de letras')
-    parser.add_argument('--numeros', '-n', type=int,
-                        default=4, help='Quantidade de números')
-    parser.add_argument('--chars', '-c', type=int, default=2,
-                        help='Quantidade de caracteres especiais')
-    parser.add_argument('--salvar', '-s', type=bool, nargs='?',
-                        default=False, help='Salvar senha em arquivo txt')
-    parser.add_argument('--output', '-o', type=str, nargs='?', default='',
-                        help='Arquivo de saída (Padrão "senhas.txt")',)
+    parser.add_argument(
+        '--letras', '-l', type=int, default=8, help='Quantidade de letras'
+    )
+    parser.add_argument(
+        '--numeros', '-n', type=int, default=4, help='Quantidade de números'
+    )
+    parser.add_argument(
+        '--chars',
+        '-c',
+        type=int,
+        default=2,
+        help='Quantidade de caracteres especiais',
+    )
+    parser.add_argument(
+        '--salvar',
+        '-s',
+        type=bool,
+        nargs='?',
+        default=False,
+        help='Salvar senha em arquivo txt',
+    )
+    parser.add_argument(
+        '--output',
+        '-o',
+        type=str,
+        nargs='?',
+        default='',
+        help='Arquivo de saída (Padrão "senhas.txt")',
+    )
 
     args = parser.parse_args()
 

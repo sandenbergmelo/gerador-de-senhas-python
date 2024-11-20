@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.3
+## Created by: Qt User Interface Compiler version 6.8.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -101,7 +101,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addLayout(self.verticalLayout_3)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer)
 
@@ -113,7 +113,7 @@ class Ui_MainWindow(object):
         font2 = QFont()
         font2.setPointSize(11)
         self.checkSavePassword.setFont(font2)
-        self.checkSavePassword.setCursor(QCursor(Qt.PointingHandCursor))
+        self.checkSavePassword.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.checkSavePassword.setStyleSheet(u"color: rgb(248, 248, 242);")
 
         self.verticalLayout.addWidget(self.checkSavePassword)
@@ -129,7 +129,7 @@ class Ui_MainWindow(object):
         font3 = QFont()
         font3.setPointSize(14)
         self.pushGeneratePassword.setFont(font3)
-        self.pushGeneratePassword.setCursor(QCursor(Qt.PointingHandCursor))
+        self.pushGeneratePassword.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.pushGeneratePassword.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "background-color: rgb(80, 250, 123);")
 
@@ -139,7 +139,7 @@ class Ui_MainWindow(object):
         self.pushClean.setObjectName(u"pushClean")
         self.pushClean.setMinimumSize(QSize(0, 40))
         self.pushClean.setFont(font3)
-        self.pushClean.setCursor(QCursor(Qt.PointingHandCursor))
+        self.pushClean.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.pushClean.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "background-color: rgb(98, 114, 164);")
 
@@ -149,7 +149,7 @@ class Ui_MainWindow(object):
         self.pushExit.setObjectName(u"pushExit")
         self.pushExit.setMinimumSize(QSize(0, 40))
         self.pushExit.setFont(font3)
-        self.pushExit.setCursor(QCursor(Qt.PointingHandCursor))
+        self.pushExit.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.pushExit.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "background-color: rgb(255, 85, 85);")
 
@@ -167,19 +167,19 @@ class Ui_MainWindow(object):
         font4.setFamilies([u"Monospace"])
         font4.setPointSize(14)
         self.listOutput.setFont(font4)
-        self.listOutput.viewport().setProperty("cursor", QCursor(Qt.ArrowCursor))
+        self.listOutput.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.listOutput.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.listOutput.setStyleSheet(u"color: rgb(248, 248, 242);\n"
 "background-color: rgb(68, 71, 90);")
         self.listOutput.setAutoScrollMargin(16)
         self.listOutput.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.listOutput.setProperty("showDropIndicator", False)
+        self.listOutput.setProperty(u"showDropIndicator", False)
         self.listOutput.setDragEnabled(False)
         self.listOutput.setDragDropOverwriteMode(False)
         self.listOutput.setDragDropMode(QAbstractItemView.DragOnly)
         self.listOutput.setSelectionMode(QAbstractItemView.SingleSelection)
         self.listOutput.setMovement(QListView.Free)
-        self.listOutput.setProperty("isWrapping", False)
+        self.listOutput.setProperty(u"isWrapping", False)
         self.listOutput.setResizeMode(QListView.Fixed)
         self.listOutput.setSelectionRectVisible(True)
 
@@ -206,4 +206,3 @@ class Ui_MainWindow(object):
         self.pushClean.setText(QCoreApplication.translate("MainWindow", u"Limpar", None))
         self.pushExit.setText(QCoreApplication.translate("MainWindow", u"Sair", None))
     # retranslateUi
-
